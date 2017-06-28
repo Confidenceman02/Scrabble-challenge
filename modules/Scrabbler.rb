@@ -1,3 +1,4 @@
+require 'pry'
 module ScrabbleNerd
   LETTER_SCORE_VALUES = {
     "A" => 1, "B" => 3, "C" => 3, "D" => 2,
@@ -9,7 +10,7 @@ module ScrabbleNerd
     "Y" => 4, "Z" => 10
   }
 
-  WORD_SCORE_POSITION_MULTIPLIER = {
+  WORD_MULTIPLIER_VALUES = {
     A1: 3, H1: 3, O1: 3, B2: 2,
     N2: 2, C3: 2, M3: 2, D4: 2,
     L4: 2, E5: 2, K5: 2, A8: 3,
@@ -18,7 +19,7 @@ module ScrabbleNerd
     N14: 2, A15: 3, H15: 3, O15: 3
   }
 
-  LETTER_SCORE_POSITION_MULTIPLIER = {
+  LETTER_MULTIPLIER_VALUES = {
     D1: 2, L1: 2, F2: 3, J2: 3,
     G3: 2, I3: 2, A4: 2, H4: 2,
     O4: 2, B6: 3, F6: 3, J6: 3,
@@ -29,4 +30,6 @@ module ScrabbleNerd
     H12: 2, O12: 2, G13: 2, I13: 2,
     F14: 3, J14: 3, D15: 2, L15: 2
   }
+  position_score_array = [['h', 'A1', 8], ['o', 'H3', 1], ['o', 'I3', 2], ['r', 'J3', 1], ['o', 'K3', 1], ['o', 'L3', 1]]
+
 end

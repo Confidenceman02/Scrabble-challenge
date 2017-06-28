@@ -1,4 +1,4 @@
-require 'Scrabble'
+require_relative '../lib/Scrabble'
 
 describe 'Scrabble' do 
       # instantiate new Scrabble class with test variables

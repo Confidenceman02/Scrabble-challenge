@@ -1,4 +1,4 @@
-require './modules/Scrabbler'
+require_relative '../modules/Scrabbler'
 
 class Scrabble
   def score(word)

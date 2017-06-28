@@ -1,4 +1,4 @@
-require 'Triple_double_game'
+require_relative '../lib/Triple_double_game'
 
 describe 'Triple_double_scores' do
   # extended class
@@ -44,7 +44,7 @@ describe 'Triple_double_scores' do
         expect(game.multi_word_processor(invalid_options_count_02)).not_to be(valid)
     end
 
-    it 'returns hash with grid position and letter score for every character in word when direction value is equal to across' do
+    it 'returns hash with grid position and letter score for every character in word based on legal scrabble grid. If the letter lands on a premium square(multiplier) this will be added to letter score ' do
 
       expect(game.letter_position_assigner(valid_triple_double_input_across)).to eq([
         ['h', 'G3', 8], ['o', 'H3', 1], ['o', 'I3', 2], ['r', 'J3', 1], ['o', 'K3', 1], ['o', 'L3', 1]
@@ -55,7 +55,18 @@ describe 'Triple_double_scores' do
       expect(game.letter_position_assigner(valid_triple_double_input_down_double_digits)).to eq([
         ['h', 'G8', 4], ['o', 'G9', 2], ['o', 'G10', 1], ['r', 'G11', 1], ['o', 'G12', 1], ['o', 'G13', 2]
       ])
+    end
+  end
 
+  describe 'apply_word_score_multiplier' do
+
+    it 'should check to see if letter positions landed on a word score multiplier. If they didnt it should return the summed letter scores. If they did, the letter scores will be summed and then the word multiplier applied.' do
+
+      include_letter_multipliers = [['h', 'G3', 8], ['o', 'H3', 1], ['o', 'I3', 2], ['r', 'J3', 1], ['o', 'K3', 1], ['o', 'L3', 1]]
+      include_word_multipliers = [['h', 'A1', 4], ['o', 'B1', 1], ['o', 'C1', 1], ['r', 'D1', 2], ['o', 'E1', 1], ['o', 'F1', 1]]
+
+      expect(game.summerizer(include_letter_multipliers)).to eq(14)
+      expect(game.summerizer(include_word_multipliers)).to eq(30)
     end
   end
 end
