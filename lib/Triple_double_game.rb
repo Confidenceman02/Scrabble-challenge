@@ -14,7 +14,7 @@ module Triple_double_game
     word_letters = word_options[:word].chars # Break word into indivudiual characters
     pointer = 0
 
-    word_options[:grid_direction] == 'down' ? pointer = 1 : nil
+    word_options[:grid_direction] == 'down' ? pointer = 1 : nil # selects whether to increment x/y axis based on direction
     word_letters.each do |letter|
       position_data = [letter, start_position.join, letter_score[letter.upcase]]
       apply_letter_multiplier(position_data)
@@ -29,7 +29,7 @@ module Triple_double_game
   def apply_letter_multiplier(position_array)
     letter_multiplier = ScrabbleNerd::LETTER_MULTIPLIER_VALUES
     if letter_multiplier.has_key?(position_array[1].to_sym) # constant keys are all symbols
-      position_array[2] *= letter_multiplier[position_array[1].to_sym]
+      position_array[2] *= letter_multiplier[position_array[1].to_sym] # multiplying letter score by valid multiplier
       return position_array
     else
       return position_array
@@ -41,7 +41,7 @@ module Triple_double_game
     multiplier = []
     multiplier_matches = []
     word_multiplier = ScrabbleNerd::WORD_MULTIPLIER_VALUES
-    final_score = position_array.each.sum {|number| number[2]}
+    final_score = position_array.each.sum {|number| number[2]} # letter scores summed to then apply word multiplier as per scrabble rules
 
     position_array.each do |position|
       if word_multiplier.has_key?(position[1].to_sym) 
@@ -49,6 +49,7 @@ module Triple_double_game
       end
     end
 
+# will apply any word multipliers if letter has landed on any word multiplier tiles
     if multiplier_matches.count == 0
       return final_score
     else

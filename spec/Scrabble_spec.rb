@@ -68,7 +68,7 @@ describe 'Scrabble' do
 
   describe 'score' do
 
-    it 'returns a valid score for a word not including extension package' do
+    it 'returns a correct score for a valid word' do
 
       expect(game.score('please')).to eq(8)
       expect(game.score('hire')).to eq(7)
