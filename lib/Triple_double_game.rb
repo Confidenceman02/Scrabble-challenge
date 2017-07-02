@@ -48,7 +48,6 @@ module Triple_double_game
         multiplier_matches << word_multiplier[position[1].to_sym]
       end
     end
-
 # will apply any word multipliers if letter has landed on any word multiplier tiles
     if multiplier_matches.count == 0
       return final_score
