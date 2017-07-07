@@ -30,6 +30,5 @@ module ScrabbleNerd
     H12: 2, O12: 2, G13: 2, I13: 2,
     F14: 3, J14: 3, D15: 2, L15: 2
   }
-  position_score_array = [['h', 'A1', 8], ['o', 'H3', 1], ['o', 'I3', 2], ['r', 'J3', 1], ['o', 'K3', 1], ['o', 'L3', 1]]
 
 end
