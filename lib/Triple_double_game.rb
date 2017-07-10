@@ -1,12 +1,19 @@
 require_relative '../modules/Scrabbler'
 require 'pry'
 
-module Triple_double_game
+class Triple_double_game  
+
+  def score(gameInfo)
+    multi_word_processor(gameInfo)
+    applied_multipliers = letter_position_assigner(gameInfo)
+    summerizer(applied_multipliers)
+  end 
+
   def multi_word_processor(word_options = {})
     word_options.length == 3
   end
 
-  # letters must be assigned a valid scrabble grid position to score correctly
+  # each letter must be assigned a valid scrabble grid position to score correctly
   def letter_position_assigner(word_options)
     letter_score = ScrabbleNerd::LETTER_SCORE_VALUES
     letter_positions = []

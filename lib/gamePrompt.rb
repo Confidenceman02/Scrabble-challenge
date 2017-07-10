@@ -1,4 +1,5 @@
 require_relative 'Scrabble'
+require_relative 'Triple_double_game'
 require 'tty'
 require 'pry'
 
@@ -59,6 +60,8 @@ def table_builder
   puts "" # readability
 end
 
+
+# Prompts the user for the game mode they wish to play
 prompt = TTY::Prompt.new
 choice01 = "Score word"
 choice02 = "Score word with scrabble grid multipliers"
@@ -86,14 +89,21 @@ puts pastel.green("Green ") + '= Letter  x3'
 puts pastel.red("Red ") + '= Word  x2'
 puts pastel.blue("Blue ") + '= Word  x3'
 puts ''
+
+# Exemplifies the desired input 
 puts "Please enter a " + wordEx + ", " + directionEx + " and a " + positionEx + " based on the scrabble grid above."
 sleep(3)
 puts "For example: " + pastel.yellow('hooroo ') + pastel.yellow('ACROSS ') + pastel.yellow('A1')
 input = gets.chomp
 input_array = input.split(' ')
 
-game = {
+gameInfo = {
   word: input_array[0],
   grid_direction: input_array[1],
   first_letter_position: input_array[2]
 }
+
+game = Triple_double_game.new
+
+# Initializes the game and returns correct score
+puts game.score(gameInfo) 
