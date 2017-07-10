@@ -2,14 +2,28 @@ require_relative 'Scrabble'
 require 'tty'
 require 'pry'
 
-def has_multiplier?(coordinate, multiplier_type = {})
+# to find out information about the letter position
+def has_multiplier?(coordinate)
   letter_multiplier = ScrabbleNerd::LETTER_MULTIPLIER_VALUES
   word_multiplier = ScrabbleNerd::WORD_MULTIPLIER_VALUES
+  multiplier_type = {}
+  if letter_multiplier.has_key?(coordinate.to_sym)
+    multiplier_type[:truth] = true
+    multiplier_type[:type] = 'letter'
+    multiplier_type[:value] = letter_multiplier[coordinate.to_sym]
 
-  if multiplier_type[:type] == 'letter' 
-    return letter_multiplier.has_key?(coordinate.to_sym)
-  else multiplier_type[:type] == 'word' 
-    return word_multiplier.has_key?(coordinate.to_sym)
+
+
+    return multiplier_type
+  elsif word_multiplier.has_key?(coordinate.to_sym)
+    multiplier_type[:truth] = true
+    multiplier_type[:type] = 'word'
+    multiplier_type[:value] = word_multiplier[coordinate.to_sym]
+
+    return multiplier_type
+  else
+    multiplier_type[:truth] = false
+    return multiplier_type
   end
 end
 
@@ -23,11 +37,15 @@ def table_builder
     while selector != 15
       pastel = Pastel.new
       grid_position = xAxis[selector] + y.to_s
-      if has_multiplier?(grid_position, { type: 'letter' })
-        row << pastel.yellow(grid_position)
+      # stores the returned information about the grid position to run checks on
+      is_multiplier = has_multiplier?(grid_position)
+
+      if is_multiplier[:truth] && is_multiplier[:type] == 'letter'
+        is_multiplier[:value] == 2 ? row << pastel.yellow(grid_position) : row << pastel.green(grid_position)
       elsif
-        has_multiplier?(grid_position, { type: 'word' })
-        row << pastel.red(grid_position)
+        is_multiplier[:truth] && is_multiplier[:type] == 'word'
+          is_multiplier[:value] == 2 ? row << pastel.red(grid_position) : row << pastel.blue(grid_position)
+          # row << pastel.red(grid_position)
       else
         row << grid_position
       end
@@ -55,7 +73,7 @@ case decision
     puts "Please enter word to be scored"
     input = gets.chomp
     game = Scrabble.new 
-    puts game.score(input)
+    puts game.score(input) # executes simple word score engine
 end
 
 pastel = Pastel.new
@@ -63,11 +81,19 @@ wordEx = pastel.yellow('word')
 positionEx = pastel.yellow('POSITION')
 directionEx = pastel.yellow('DIRECTION')
 
-puts pastel.yellow('Yellow ') + '= Letter multiplier'
-puts pastel.red("Red ") + '= Word multiplier'
+puts pastel.yellow('Yellow ') + '= Letter x2'
+puts pastel.green("Green ") + '= Letter  x3'
+puts pastel.red("Red ") + '= Word  x2'
+puts pastel.blue("Blue ") + '= Word  x3'
 puts ''
-puts "Please enter a " + wordEx + ", " + positionEx + " and a " + directionEx + " based on the scrabble grid above."
+puts "Please enter a " + wordEx + ", " + directionEx + " and a " + positionEx + " based on the scrabble grid above."
 sleep(3)
-puts "For example: " + pastel.yellow('hooroo ') + pastel.yellow('A1 ') + pastel.yellow('ACROSS')
+puts "For example: " + pastel.yellow('hooroo ') + pastel.yellow('ACROSS ') + pastel.yellow('A1')
 input = gets.chomp
+input_array = input.split(' ')
 
+game = {
+  word: input_array[0],
+  grid_direction: input_array[1],
+  first_letter_position: input_array[2]
+}
