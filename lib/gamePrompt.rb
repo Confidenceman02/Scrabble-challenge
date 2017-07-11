@@ -42,10 +42,10 @@ def table_builder
       is_multiplier = has_multiplier?(grid_position)
 
       if is_multiplier[:truth] && is_multiplier[:type] == 'letter'
-        is_multiplier[:value] == 2 ? row << pastel.yellow(grid_position) : row << pastel.green(grid_position)
+        is_multiplier[:value] == 2 ? row << pastel.cyan(grid_position) : row << pastel.blue(grid_position)
       elsif
         is_multiplier[:truth] && is_multiplier[:type] == 'word'
-          is_multiplier[:value] == 2 ? row << pastel.red(grid_position) : row << pastel.blue(grid_position)
+          is_multiplier[:value] == 2 ? row << pastel.magenta(grid_position) : row << pastel.red(grid_position)
           # row << pastel.red(grid_position)
       else
         row << grid_position
@@ -84,10 +84,10 @@ wordEx = pastel.yellow('word')
 positionEx = pastel.yellow('POSITION')
 directionEx = pastel.yellow('DIRECTION')
 
-puts pastel.yellow('Yellow ') + '= Letter x2'
-puts pastel.green("Green ") + '= Letter  x3'
-puts pastel.red("Red ") + '= Word  x2'
-puts pastel.blue("Blue ") + '= Word  x3'
+puts pastel.blue('Blue ') + '= Letter x3'
+puts pastel.cyan("Cyan ") + '= Letter  x2'
+puts pastel.red("Red ") + '= Word  x3'
+puts pastel.magenta("Magenta ") + '= Word  x2'
 puts ''
 
 # Exemplifies the desired input 
