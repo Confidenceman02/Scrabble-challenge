@@ -8,11 +8,13 @@ This is represented visually using the tty toolkit.
 <img src="./assets/images/scrabble_grid_IG.png" alt="Drawing" width="288"/>
 
 ### Functionality
-In basic mode the user simply inputs a word and it will return its score value based on letter scores.
+To initiate a game from root directory
+```cd lib```
+```ruby gamePrompt```
+
+```Score Word``` will let the user input a word and a score will be returned based on scores for each letter in the word.
 
 ```cabbage => 14```
 
-In Scrabble grid mode the user inputs a word, a word direction(across, down) and a starting position(A1).
-This will allow the word to be scored with any multipliers the word should accrue.
-
-
+In ```Score word with Scrabble grid``` the user inputs a word, a word direction(across, down) and a starting position(A1).
+This will allow the word to be scored with any multipliers the word should accrue based on a official Scrabble grid.
