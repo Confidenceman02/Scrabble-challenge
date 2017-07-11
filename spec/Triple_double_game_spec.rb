@@ -2,8 +2,8 @@ require_relative '../lib/Triple_double_game'
 
 describe 'Triple_double_scores' do
   # extended class
-  let(:game) {Class.new { extend Triple_double_game } }
-
+  # let(:game) {Class.new { extend Triple_double_game } }
+  game = Triple_double_game.new
   valid = true
 
   describe 'multi_word_processor' do
@@ -67,6 +67,18 @@ describe 'Triple_double_scores' do
 
       expect(game.summerizer(include_letter_multipliers)).to eq(14)
       expect(game.summerizer(include_word_multipliers)).to eq(30)
+    end
+  end
+
+  describe 'score' do
+
+    it 'Should run the user input through all the class methods to return a valid score' do
+      gameInfo = {
+        word: 'hooroo',
+        grid_direction: 'across',
+        first_letter_position: 'A1'
+      }
+      expect(game.score(gameInfo)).to eq(30)
     end
   end
 end
