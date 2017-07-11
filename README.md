@@ -7,4 +7,4 @@ This is represented visually using the tty toolkit.
 
 <!--![alt text](https://github.com/Confidenceman02/Scrabble-challenge/blob/master/assets/images/scrabble_grid_IG.png =288x)-->
 
-<img src="./assets/images/scrabble_grid_IG.png" alt="Drawing" style="width: 288px;"/>
+<img src="./assets/images/scrabble_grid_IG.png" alt="Drawing" width="288"/>
