@@ -13,7 +13,7 @@ module ScrabbleNerd
   WORD_MULTIPLIER_VALUES = {
     A1: 3, H1: 3, O1: 3, B2: 2,
     N2: 2, C3: 2, M3: 2, D4: 2,
-    L4: 2, E5: 2, K5: 2, A8: 3,
+    H8: 2, L4: 2, E5: 2, K5: 2, A8: 3,
     O8: 3, E11: 2, K11: 2, D12: 2,
     L12: 2, C13: 2, M13: 2, B14: 2,
     N14: 2, A15: 3, H15: 3, O15: 3
