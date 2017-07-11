@@ -5,5 +5,5 @@ As a dedicated scrabble player myself I decided to take the Scrabble challenge t
 
 This is represented visually using the tty toolkit.
 
-![alt text](https://github.com/Confidenceman02/Scrabble-challenge/blob/master/assets/images/scrabble_grid_IG.png)
+![alt text](https://github.com/Confidenceman02/Scrabble-challenge/blob/master/assets/images/scrabble_grid_IG.png =288x)
 
