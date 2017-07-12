@@ -12,10 +12,11 @@ To initiate a game <br>
 ```cd lib``` <br>
 ```ruby gamePrompt``` <br>
 
-The user is given two options 
+The user is given two options <br>
 ```Score word``` <br> 
 and <br>
 ```Score word with Scrabble grid``` <br>
+<br>
 ```Score Word``` will let the user input a word and a score will be returned based on scores for each letter in the word.
 e.g.
 ```cabbage => 14```
