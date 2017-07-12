@@ -9,22 +9,22 @@ This is represented visually using the tty toolkit.
 
 ### Functionality
 To initiate a game <br>
-```cd lib``` <br>
-```ruby gamePrompt``` <br>
+```> cd lib``` <br>
+```> ruby gamePrompt``` <br>
 
 The user is given two options <br>
-```Score word``` <br> 
+```> Score word``` <br> 
 and <br>
-```Score word with Scrabble grid``` <br>
+```> Score word with Scrabble grid``` <br>
 <br>
-```Score Word``` will let the user input a word and a score will be returned based on scores for each letter in the word.
+```> Score Word``` will let the user input a word and a score will be returned based on scores for each letter in the word.
 e.g.
-```cabbage => 14```
+```> cabbage => 14```
 
-In ```Score word with Scrabble grid``` the user inputs a word, a direction(ACROSS, DOWN) and a starting position(A1).
+In ```> Score word with Scrabble grid``` the user inputs a word, a direction(ACROSS, DOWN) and a starting position(A1).
 This will allow the word to be scored with any multipliers the word should accrue based on a official Scrabble grid.
 
-```hooroo ACROSS A1 => 30```
+```> hooroo ACROSS A1 => 30```
 <br>
-```hooroo DOWN A2 => 30```
+```> hooroo DOWN A2 => 30```
 
