@@ -92,7 +92,6 @@ puts ''
 
 # Exemplifies the desired input 
 puts "Please enter a " + wordEx + ", " + directionEx + " and a " + positionEx + " based on the scrabble grid above."
-sleep(3)
 puts "For example: " + pastel.yellow('hooroo ') + pastel.yellow('ACROSS ') + pastel.yellow('A1')
 input = gets.chomp
 input_array = input.split(' ')

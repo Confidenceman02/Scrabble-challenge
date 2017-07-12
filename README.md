@@ -23,3 +23,8 @@ e.g.
 
 In ```Score word with Scrabble grid``` the user inputs a word, a direction(ACROSS, DOWN) and a starting position(A1).
 This will allow the word to be scored with any multipliers the word should accrue based on a official Scrabble grid.
+
+```hooroo ACROSS A1 => 30```
+<br>
+```hooroo DOWN A2 => 30```
+
