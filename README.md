@@ -15,7 +15,7 @@ To initiate a game <br>
 The user is given two options 
 ```Score word``` <br> 
 and <br>
-```Score word with Scrabble grid```
+```Score word with Scrabble grid``` <br>
 ```Score Word``` will let the user input a word and a score will be returned based on scores for each letter in the word.
 e.g.
 ```cabbage => 14```
