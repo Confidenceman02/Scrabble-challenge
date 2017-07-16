@@ -8,6 +8,8 @@ This is represented visually using the tty toolkit.
 <img src="./assets/images/scrabble_grid_IG.png" alt="Drawing" width="288"/>
 
 ### Functionality
+Install Dependencies <br>
+```gem install tty```
 To initiate a game <br>
 ```> cd lib``` <br>
 ```> ruby gamePrompt``` <br>
