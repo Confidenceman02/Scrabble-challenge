@@ -77,6 +77,7 @@ case decision
     input = gets.chomp
     game = Scrabble.new 
     puts game.score(input) # executes simple word score engine
+    exit
 end
 
 pastel = Pastel.new
