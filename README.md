@@ -9,7 +9,7 @@ This is represented visually using the tty toolkit.
 
 ### Functionality
 Install Dependencies <br>
-```gem install tty```
+```> gem install tty``` <br>
 To initiate a game <br>
 ```> cd lib``` <br>
 ```> ruby gamePrompt``` <br>
